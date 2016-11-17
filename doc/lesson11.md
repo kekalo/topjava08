@@ -1,6 +1,6 @@
 # Онлайн проекта <a href="https://github.com/JavaWebinar/topjava08">Topjava</a>
 
-#### Все патчи уже вчекинил в наш репозиторий и обновил <a href="http://topjava.herokuapp.com/">демо</a> приложение
+### Все патчи урока уже вчекинены в наш репозиторий. Обновил <a href="http://topjava.herokuapp.com/">демо</a> приложение
 
 ### <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFfjBtOHl2WXdKWEo5R0NkcENQdGt6b1d5VjFQYTFBVHU4VVhYY0dwbjZXc1U">Материалы занятия (скачать все патчи можно через Download папки patch)</a>
 
