@@ -50,8 +50,9 @@
 ###  ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png)  <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFZkpVM19QWFBOQ2c">3. Деплой приложения в Heroku.</a>
 #### Apply 11-07-heroku.patch
 
-- В `AbstractUserController` добавилась защита от удаления-модификации `Admin/User` для профиля `HEROKU` (в `AbstractUserController` заинжектил `Environment` и сделал проверку `HEROKU` в активных профилях)
-- Добавил тесты на запрет модификации `Admin/User` для профиля `HEROKU`
+> - В `AbstractUserController` добавилась защита от удаления-модификации `Admin/User` для профиля `HEROKU` (в `AbstractUserController` заинжектил `Environment` и сделал проверку `HEROKU` в активных профилях)
+> - Добавил тесты на запрет модификации `Admin/User` для профиля `HEROKU`
+
 - <a href="http://habrahabr.ru/post/265591/">Деплой Java Spring приложения в PaaS-платформу Heroku</a>
 ```
 Config Vars
