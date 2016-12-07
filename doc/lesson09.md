@@ -110,7 +110,25 @@
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 12. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFUzNFanF6MGZGNHc">Cookie. Session.</a>
 -  <a href="https://ru.wikipedia.org/wiki/HTTP_cookie">HTTP cookie</a></h3>
 -  <a href="http://stackoverflow.com/questions/595872/under-what-conditions-is-a-jsessionid-created">Under what conditions is a JSESSIONID created?</a>
--  <a href="http://halyph.com/2014/08/how-to-disable-tomcat-session.html">Tomcat Session Serialization</a>
+-  <a href="http://halyph.blogspot.ru/2014/08/how-to-disable-tomcat-session.html">Tomcat Session Serialization</a>
+
+## ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Ваши вопросы
+
+>  В куки попадает обычная строка JSESSIONID. Куда сериалиуется обьект User?
+
+Для хранения сосотяния сессии (например корзины покупателя) в Servlet API есть механизм хранения объектов сессии (грубо- мультимапмапа, которая достается из хранилища по ключу). При создании сессии на стороне сервера (через `request.getSession`) создается кука `JSESSIONID`, которая пеердается между клиентом и сервером и является ключом в хранилище объектов сессий. См. <a href="http://javatutor.net/books/tiej/servlets#_Toc39472970">обработка сессий с помощью сервлетов</a>
+
+> В `login.jsp` есть форма `&lt;form:form action="spring_security_check" ..&gt; Где такой url используется?
+
+Это стандартный url для авторизации в spring-security. Он его и обрабатывает.
+
+> Если не пользовать js, а писать UI на JSP, сообщения между ui и сервером будут в формате json? Это же будет JSON API?
+
+Есть данные, которые передаются между клиентом и сервером в формате json, есть стандартизированный формат url для ресурсов - <a href="https://ru.wikipedia.org/wiki/REST">архитектурный стиль REST</a>. И есть отрисовка UI: JSP, Javascript фреймворк, Thymleaf и пр. Не надо эти вещи путать между собой. 
+
+> По умолчанию спринг работает с `UserDetailsService`, который должен возвращать `UserDetails`. Но мы не хотим стандартные, мы хотим свои, поэтому просто наследуем наши `UserServiceImpl` и `AuthorizedUser` от соответствующих интерфейсов и реализуем недостающие методы, которые spring security и будет использовать?
+
+Сервис аутентификации конфигурится в `spring-security.xml` `<authentication-manager>` и должен реализовывать интерфейс `UserDetailsService`. В spring-security есть его стандартные реализации, которые использовались до нашей кастомной `UserServiceImpl`, например `<jdbc-user-service` использует реализацию `JdbcUserDetailsManager`
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Домашнее задание HW9
 
@@ -121,9 +139,14 @@
 #### Optional
 - Подключить datetime-picker
   - <a href="http://xdsoft.net/jqplugins/datetimepicker/">DateTimePicker jQuery plugin</a>
+  - Еще есть <a href="https://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap 3 Datepicker</a>
 
-## ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Ваши вопросы
-
-> В `login.jsp` есть форма `&lt;form:form action="spring_security_check" ..&gt; Где такой url используется?
-
-Это стандартный url для авторизации в spring-security. Он его и обрабатывает.
+## ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Проверка в HW09
+- Проверьте, что при добавлении и редактировании пользователя и еды у вас корректно отображаются заголовки модального окна:
+"Добавить/Редактировать еду/пользователя"
+- Попробуйте не дублировать
+```
+<c:forEach var='key' ...
+i18n['${key}'] = ...
+```
+- Для подключения css и js datetimepicker-а посмотрите в его jar (или поищите в проекте по Ctrl+Shift+N: `datetimepicker`)

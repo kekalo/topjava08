@@ -110,7 +110,7 @@
 - **Apply 14-fix-servlet.patch**
  
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 11. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNDlOQVpOWF82OTA">Ответы на Ваши вопросы</a>
--  Что такое REST?
+-  Что такое REST? <a href="http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/">10 Best Practices for Better RESTful API</a>
 -  Зачем нужна сортировка еды?
 -  Можно ли обойтись без `MapSqlParameterSource`?
 -  Как происходит работа с DB в тестах?

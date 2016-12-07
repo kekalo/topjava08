@@ -140,6 +140,17 @@ Maven скачивает все депенденси в local repository, кот
 <a href="http://stackoverflow.com/questions/319530/restful-authentication">Способы RESTful Authentication</a>.
 Мы будем использовать 2: coockie + http session (на след. уроке) и Basic Authentication с аутентификацией при каждом запросе.
 
+> Почему `@RequestParam` не работает в PUT и DELETE запросах?
+
+По спецификации Servlet API параметры в теле для PUT, DELETE, TRACE методах не обрабатываются (только в url).
+Те. можно: 
+ - использовать POST
+ - передавать параметры в url
+ - использовать `HttpPutFormContentFilter` фильтр
+ - настроить Tomcat в обход спецификации. 
+ 
+См. <a href="http://stackoverflow.com/a/14568899/548473">Handle request parameters for an HTTP PUT method</a>
+ 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Домашнее задание HW08
 
 - Перевести `meals` на `datatables` (`meals.jsp`, `MealAjaxController`).
